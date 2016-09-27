@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36BFBD51-FEF9-4404-A32A-DEDA95CCCFF8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BindingFile.Diagnostics.Rules.Generic</RootNamespace>
+    <AssemblyName>BindingFile.Diagnostics.Rules.Generic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Rules\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BindingFile.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\AdapterHandler.cs" />
+    <Compile Include="Adapter\ReportDeprecatedTransportType.cs" />
+    <Compile Include="Filter\ValidateErrorReportFilters.cs" />
+    <Compile Include="MultipleReferences\SendPortGroupMultipleReferences.cs" />
+    <Compile Include="MultipleReferences\SendPortMultipleReferences.cs" />
+    <Compile Include="MustBeBound\ReceivePortMustBeBound.cs" />
+    <Compile Include="Filter\FilterMustBeValid.cs" />
+    <Compile Include="MustBeBound\SendPortGroupMustBeBound.cs" />
+    <Compile Include="MustBeBound\OrchestrationMustBeBound.cs" />
+    <Compile Include="MustBeBound\SendPortMustBeBound.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BindingFile.Adapters.Lib\BindingFile.Adapters.Lib.csproj">
+      <Project>{A033010E-FCD5-46F7-84DD-A2876934B50C}</Project>
+      <Name>BindingFile.Adapters.Lib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile.Adapters.Standard\BindingFile.Adapters.Standard.csproj">
+      <Project>{1D46B937-0945-4904-BB0F-9993D703F8BA}</Project>
+      <Name>BindingFile.Adapters.Standard</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile.Diagnostics.Rules.Lib\BindingFile.Diagnostics.Rules.Lib.csproj">
+      <Project>{B5F03745-5B35-4FB8-BB01-FF3113A49BA2}</Project>
+      <Name>BindingFile.Diagnostics.Rules.Lib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile\BindingFile.csproj">
+      <Project>{56EC303A-E3F8-437E-8D2A-26CF13C355C7}</Project>
+      <Name>BindingFile</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BindingFile.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

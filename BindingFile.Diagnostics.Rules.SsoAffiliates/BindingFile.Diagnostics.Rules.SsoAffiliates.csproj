@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04E517DE-3E47-47F3-8C1A-FD0F7E6BD797}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BindingFile.Diagnostics.Rules.SsoAffiliates</RootNamespace>
+    <AssemblyName>BindingFile.Diagnostics.Rules.SsoAffiliates</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Rules\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BindingFile.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.EnterpriseSingleSignOn.Interop, Version=9.0.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Host Integration Server 2013\system\Microsoft.EnterpriseSingleSignOn.Interop.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="nSoftware\SftpAdapterSSOAffiliateMustExist.cs" />
+    <Compile Include="Sso\SsoAffiliateApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BindingFile.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BindingFile.Adapters.Lib\BindingFile.Adapters.Lib.csproj">
+      <Project>{a033010e-fcd5-46f7-84dd-a2876934b50c}</Project>
+      <Name>BindingFile.Adapters.Lib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile.Adapters.NSoftware\BindingFile.Adapters.NSoftware.csproj">
+      <Project>{4df6c28d-b7f4-4780-868c-13d127ba24cd}</Project>
+      <Name>BindingFile.Adapters.NSoftware</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile.Diagnostics.Rules.Lib\BindingFile.Diagnostics.Rules.Lib.csproj">
+      <Project>{b5f03745-5b35-4fb8-bb01-ff3113a49ba2}</Project>
+      <Name>BindingFile.Diagnostics.Rules.Lib</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BindingFile\BindingFile.csproj">
+      <Project>{56ec303a-e3f8-437e-8d2a-26cf13c355c7}</Project>
+      <Name>BindingFile</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
